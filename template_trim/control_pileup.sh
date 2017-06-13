@@ -1,6 +1,6 @@
 #!/bin/bash
 
-module load parallel
+#module load parallel
 
 c_S1_R1=c_s1r1Fastq
 c_S1_R2=c_s1r2Fastq
@@ -20,12 +20,12 @@ BOWTIE2_DB=bowtie2_db_value
 S_DB=seq_db
 ref=/panfs/roc/rissdb/genomes/Homo_sapiens/hg19_canonical/seq/hg19_canonical.fa
 
-bwacommand="/home/msistaff/lamx0031/my_software/BWA/bwa-0.7.15/bwa mem -M -t 24 $BWA_DB $c_S1_R1 $c_S1_R2 | samtools view -q 10 -bS - > c_bwa.bam"
+bwacommand="bwa mem -M -t 24 $BWA_DB $c_S1_R1 $c_S1_R2 | samtools view -q 10 -bS - > c_bwa.bam"
 btcommand="bowtie2 -p 24 -k 5 -x $BOWTIE2_DB -1 $c_S1_R1 -2 $c_S1_R2 | samtools view -q 10 -bS - > c_bowtie2.bam"
 
 #echo ${bwacommand} > $WORKING_PATH/aligncommands
 #echo ${btcommand} >> $WORKING_PATH/aligncommands
-# cat ${WORKING_PATH}/aligncommands | parallel -j +0 $1
+cat ${WORKING_PATH}/aligncommands | parallel -j +0 $1
 
 # java -Xmx4g -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=c_bwa.bam OUTPUT=c_bwa.fixed.bam
 # picard1="java -Xmx4g -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=c_bwa_duplicate_stats.txt INPUT=c_bwa.fixed.bam OUTPUT=c_bwa.fixed_nodup.bam"
