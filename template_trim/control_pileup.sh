@@ -18,7 +18,8 @@ WORKING_PATH=working_dir
 BWA_DB=bwa_db_value
 BOWTIE2_DB=bowtie2_db_value
 S_DB=seq_db
-ref=/panfs/roc/rissdb/genomes/Homo_sapiens/hg19_canonical/seq/hg19_canonical.fa
+#ref=/panfs/roc/rissdb/genomes/Homo_sapiens/hg19_canonical/seq/hg19_canonical.fa
+ref=${S_DB}
 
 bwacommand="bwa mem -M -t 24 $BWA_DB $c_S1_R1 $c_S1_R2 | samtools view -q 10 -bS - > c_bwa.bam"
 btcommand="bowtie2 -p 24 -k 5 -x $BOWTIE2_DB -1 $c_S1_R1 -2 $c_S1_R2 | samtools view -q 10 -bS - > c_bowtie2.bam"
