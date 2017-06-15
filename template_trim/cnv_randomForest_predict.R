@@ -1,5 +1,5 @@
 options(warn=-1);
-.libPaths("/home/msistaff/lamx0031/R/x86_64-unknown-linux-gnu-library/3.1")
+# .libPaths("/home/msistaff/lamx0031/R/x86_64-unknown-linux-gnu-library/3.1")
 library(RMySQL);
 library("randomForest");
 
