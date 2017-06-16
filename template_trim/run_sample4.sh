@@ -79,37 +79,37 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
  echo ${timecheck} >> $working_dir/time_check
  
 # 
- grep "base_tables_loaded" $working_dir/completed.txt > /dev/null 2>&1
- if [ "$?" = "0" ]; then
-     echo "base tables already loaded"
- else
+# grep "base_tables_loaded" $working_dir/completed.txt > /dev/null 2>&1
+# if [ "$?" = "0" ]; then
+#     echo "base tables already loaded"
+# else
    # CREATE DATABASE
-    mysql --socket=$BASE/thesock -u root -e "CREATE DATABASE cnv4;"
+ #   mysql --socket=$BASE/thesock -u root -e "CREATE DATABASE cnv4;"
      
-     echo "Load tables"
+  #   echo "Load tables"
     # find $table_path -name "*.sql" | xargs -I {} -n 1 -P 24 sh -c "mysql --socket=$BASE/thesock -u root cnv4 < \"{}\" "
   
   
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/training_data_2016_07.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_data.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_main_data.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_pileup.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_window_data.sql">> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_contig_pileup.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_reference_exon.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_reference.sql" >> $working_dir/basetables_load_commands
-   echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_windows_padded_pileup.sql" >> $working_dir/basetables_load_commands
-   cat $working_dir/basetables_load_commands | parallel -j +0 
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/training_data_2016_07.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_data.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_main_data.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_pileup.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_60bp_segments_window_data.sql">> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_exon_contig_pileup.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_reference_exon.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_reference.sql" >> $working_dir/basetables_load_commands
+  # echo "mysql --socket=$BASE/thesock -u root cnv4 < $table_path/tso_windows_padded_pileup.sql" >> $working_dir/basetables_load_commands
+  # cat $working_dir/basetables_load_commands | parallel -j +0 
 
-  if [[ $? -ne 0 ]] ; then
-	echo "MySQL base table loading failed" >&2
-	exit 1
-    else
-	echo "base_tables_loaded" >> $working_dir/completed.txt
-    fi
-fi
+  # if [[ $? -ne 0 ]] ; then
+ #	echo "MySQL base table loading failed" >&2
+#	exit 1
+ #   else
+#	echo "base_tables_loaded" >> $working_dir/completed.txt
+ #   fi
+# fi
 
-echo -n "Finished Mysql load base tables " >> $working_dir/time_check
+echo -n "Skipped Finished Mysql load base tables cnv4 " >> $working_dir/time_check
 timecheck=`(date +"%Y-%m-%d [ %H:%M:%S ]")`;
 echo ${timecheck} >> $working_dir/time_check
 
