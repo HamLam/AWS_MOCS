@@ -17,14 +17,14 @@ echo $mysql_socket
 
 cd $working_dir
 
-module load parallel
-module load R/3.1.1
-module load bedtools/2.25.0/bin/bedtools
-module load python/2.7.5
-PYTHONPATH=/soft/python/2.7.1/lib/python2.7/site-packages
-export PYTHONPATH=/soft/python/2.7.5/lib/python2.7/site-packages:$PYTHONPATH
-LD_LIBRARY_PATH=/soft/python/2.7.1/lib
-export LD_LIBRARY_PATH=/soft/python/2.7.5/lib:$LD_LIBRARY_PATH
+#module load parallel
+#module load R/3.1.1
+#module load bedtools/2.25.0/bin/bedtools
+#module load python/2.7.5
+#PYTHONPATH=/soft/python/2.7.1/lib/python2.7/site-packages
+#export PYTHONPATH=/soft/python/2.7.5/lib/python2.7/site-packages:$PYTHONPATH
+#LD_LIBRARY_PATH=/soft/python/2.7.1/lib
+#export LD_LIBRARY_PATH=/soft/python/2.7.5/lib:$LD_LIBRARY_PATH
 
 _now=$(date +"%Y-%m-%d_%H-%M")
 
