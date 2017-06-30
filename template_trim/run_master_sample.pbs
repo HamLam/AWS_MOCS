@@ -80,8 +80,16 @@ timecheck=`(date +"Date: %Y-%m-%d Time %H:%M:%S")`;
    ln -s ${working_dir}/*.bam $working_dir_g3/
    ln -s ${working_dir}/*.bam $working_dir_g2/  
    ln -s ${working_dir}/*.bam $working_dir_g1/
-
-  echo "Mapping done and bam files linked to groups" >> $working_dir/completed.txt
+  
+   cp ${working_dir/*_t $working_dir_g7/
+   cp ${working_dir/*_t $working_dir_g6/
+   cp ${working_dir/*_t $working_dir_g5/
+   cp ${working_dir/*_t $working_dir_g4/
+   cp ${working_dir/*_t $working_dir_g3/
+   cp ${working_dir/*_t $working_dir_g2/
+   cp ${working_dir/*_t $working_dir_g1/
+   
+  echo "Mapping done and bam and _t files linked and copied to 7 groups" >> $working_dir/completed.txt
 
 
 # grep "installed_mysql" $working_dir/completed.txt > /dev/null 2>&1
