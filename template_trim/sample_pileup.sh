@@ -46,7 +46,7 @@ indexcomm3="samtools index s_bowtie2.fixed.bam"
 echo ${indexcomm1} > $WORKING_PATH/sindexcommands
 echo ${indexcomm2} >> $WORKING_PATH/sindexcommands
 echo ${indexcomm3} >> $WORKING_PATH/sindexcommands
-cat ${WORKING_PATH}/sindexcommands | parallel -j +0 $1
+# cat ${WORKING_PATH}/sindexcommands | parallel -j +0 $1
 
 
 
@@ -56,7 +56,7 @@ chr2_files=($chrfiles_path/file.*)
 for ((i=0;i<${#chr1_files[@]};i++)); do
 echo "perl $script_path/trimfile_t.pl "${chr1_files[i]}" "${chr2_files[i]}" " >> schopcommands
 done
-cat ${WORKING_PATH}/schopcommands | parallel -j +0
+# cat ${WORKING_PATH}/schopcommands | parallel -j +0
 
 # cat *.s_bwa_count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_sample_name_bwa_pileup.txt
 
@@ -66,7 +66,7 @@ chr2a_files=($chrfiles_path/file.*)
 for ((i=0;i<${#chr1a_files[@]};i++)); do
 echo "perl $script_path/trimfile_t.pl "${chr1a_files[i]}" "${chr2a_files[i]}" " >> schopcommands2
 done
-cat ${WORKING_PATH}/schopcommands2 | parallel -j +0
+# cat ${WORKING_PATH}/schopcommands2 | parallel -j +0
 
 #cat *.s_bwa_nodup_count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_sample_name_bwa_pileup_no_dup.txt
 
@@ -77,7 +77,7 @@ chr2b_files=($chrfiles_path/file.*)
 for ((i=0;i<${#chr1b_files[@]};i++)); do
 echo "perl $script_path/trimfile_t.pl "${chr1b_files[i]}" "${chr2b_files[i]}" " >> schopcommands3
 done
-cat ${WORKING_PATH}/schopcommands3 | parallel -j +0
+# cat ${WORKING_PATH}/schopcommands3 | parallel -j +0
 
 
 #cat *.s_bowtie2_count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_sample_name_bowtie2_pileup.txt
