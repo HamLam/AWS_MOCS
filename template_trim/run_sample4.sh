@@ -160,7 +160,7 @@ grep "mysqlimport" $working_dir/completed.txt > /dev/null 2>&1
 else
  echo "Run mysqlimport"
 
-     mysqlimport --local --socket=$BASE/thesock -u root cnv4 --use-threads=24 \
+     mysqlimport --local --socket=$BASE/thesock -u root cnv4 --use-threads=8 \
      cnv_control_name_bwa_pileup_no_dup.chr9_t \
      cnv_control_name_bwa_pileup_no_dup.chr10_t \
      cnv_control_name_bwa_pileup_no_dup.chr11_t \
