@@ -208,7 +208,7 @@ else
      cnv_sample_name_bowtie_pileup.chr10_t \
      cnv_sample_name_bowtie_pileup.chr13_t \
      cnv_sample_name_bowtie_pileup.chr15_t \
-     cnv_sample_name_bowtie_pileup.chr17_t \
+     cnv_sample_name_bowtie_pileup.chr17_t 
   if [[ $? -ne 0 ]]; then
    echo "Run mysqlimport failed" >&2
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
