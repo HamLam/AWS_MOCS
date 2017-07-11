@@ -46,7 +46,7 @@ indexcomm3="samtools index s_bowtie2.fixed.bam"
 echo ${indexcomm1} > $WORKING_PATH/sindexcommands
 echo ${indexcomm2} >> $WORKING_PATH/sindexcommands
 echo ${indexcomm3} >> $WORKING_PATH/sindexcommands
-# cat ${WORKING_PATH}/sindexcommands | parallel -j +0 
+cat ${WORKING_PATH}/sindexcommands | parallel -j +0 
 
 
 
