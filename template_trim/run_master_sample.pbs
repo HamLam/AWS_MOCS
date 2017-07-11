@@ -80,7 +80,15 @@ timecheck=`(date +"Date: %Y-%m-%d Time %H:%M:%S")`;
    ln -s ${working_dir}/*.bam $working_dir_g3/
    ln -s ${working_dir}/*.bam $working_dir_g2/  
    ln -s ${working_dir}/*.bam $working_dir_g1/
-  
+   
+   ln -s ${working_dir}/*.bai $working_dir_g7/
+   ln -s ${working_dir}/*.bai $working_dir_g6/    
+   ln -s ${working_dir}/*.bai $working_dir_g5/
+   ln -s ${working_dir}/*.bai $working_dir_g4/
+   ln -s ${working_dir}/*.bai $working_dir_g3/
+   ln -s ${working_dir}/*.bai $working_dir_g2/
+   ln -s ${working_dir}/*.bai $working_dir_g1/
+   
    #cp ${working_dir}/*_t $working_dir_g7/
    #cp ${working_dir}/*_t $working_dir_g6/
    #cp ${working_dir}/*_t $working_dir_g5/
