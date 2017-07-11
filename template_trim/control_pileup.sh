@@ -26,7 +26,7 @@ btcommand="bowtie2 -p 16 -k 5 -x $BOWTIE2_DB -1 $c_S1_R1 -2 $c_S1_R2 | samtools 
 
 #echo ${bwacommand} > $WORKING_PATH/aligncommands
 #echo ${btcommand} >> $WORKING_PATH/aligncommands
-cat ${WORKING_PATH}/aligncommands | parallel -j +0 $1
+#cat ${WORKING_PATH}/aligncommands | parallel -j +0 $1
 
 # java -Xmx4g -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=c_bwa.bam OUTPUT=c_bwa.fixed.bam
 # picard1="java -Xmx4g -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=c_bwa_duplicate_stats.txt INPUT=c_bwa.fixed.bam OUTPUT=c_bwa.fixed_nodup.bam"
