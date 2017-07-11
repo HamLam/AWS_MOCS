@@ -43,34 +43,34 @@ cat ${WORKING_PATH}/cpicardcommands | parallel -j +0
  cat ${WORKING_PATH}/indexcommands | parallel -j 3
 # 
 # 
- samtools view -H c_bwa.fixed.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bwa.fixed.bam | cut -f 1,2,4 > cnv_control_name_bwa_pileup.\"{}\""
+# samtools view -H c_bwa.fixed.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bwa.fixed.bam | cut -f 1,2,4 > cnv_control_name_bwa_pileup.\"{}\""
 # 
- chr1_files=($WORKING_PATH/cnv_control_name_bwa_pileup.chr*)
- chr2_files=($chrfiles_path/file.*)
- for ((i=0;i<${#chr1_files[@]};i++)); do
- echo "perl $script_path/trimfile_t.pl "${chr1_files[i]}" "${chr2_files[i]}" " >> chopcommands
- done
- cat ${WORKING_PATH}/chopcommands | parallel -j 8
+# chr1_files=($WORKING_PATH/cnv_control_name_bwa_pileup.chr*)
+# chr2_files=($chrfiles_path/file.*)
+# for ((i=0;i<${#chr1_files[@]};i++)); do
+# echo "perl $script_path/trimfile_t.pl "${chr1_files[i]}" "${chr2_files[i]}" " >> chopcommands
+# done
+# cat ${WORKING_PATH}/chopcommands | parallel -j 8
  
- cat *.c_bwa.count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_control_name_bwa_pileup.txt
+# cat *.c_bwa.count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_control_name_bwa_pileup.txt
  
- samtools view -H c_bwa.fixed_nodup.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bwa.fixed_nodup.bam | cut -f 1,2,4 > cnv_control_name_bwa_pileup_no_dup.\"{}\""
- chr1a_files=($WORKING_PATH/cnv_control_name_bwa_pileup_no_dup.chr*)
- chr2a_files=($chrfiles_path/file.*)
- for ((i=0;i<${#chr1a_files[@]};i++)); do
- echo "perl $script_path/trimfile_t.pl "${chr1a_files[i]}" "${chr2a_files[i]}" " >> chopcommands2
- done
- cat ${WORKING_PATH}/chopcommands2 | parallel -j 8
+# samtools view -H c_bwa.fixed_nodup.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bwa.fixed_nodup.bam | cut -f 1,2,4 > cnv_control_name_bwa_pileup_no_dup.\"{}\""
+# chr1a_files=($WORKING_PATH/cnv_control_name_bwa_pileup_no_dup.chr*)
+# chr2a_files=($chrfiles_path/file.*)
+# for ((i=0;i<${#chr1a_files[@]};i++)); do
+# echo "perl $script_path/trimfile_t.pl "${chr1a_files[i]}" "${chr2a_files[i]}" " >> chopcommands2
+# done
+# cat ${WORKING_PATH}/chopcommands2 | parallel -j 8
  
-cat *.c_bwa_nodup_count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_control_name_bwa_pileup_no_dup.txt
+# cat *.c_bwa_nodup_count | awk '{FS=" ";print $1,"\t",$2,"\t",$4}' - >> cnv_control_name_bwa_pileup_no_dup.txt
 # 
- samtools view -H c_bowtie2.fixed.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bowtie2.fixed.bam | cut -f 1,2,4 > cnv_control_name_bowtie_pileup.\"{}\""
- chr1b_files=($WORKING_PATH/cnv_control_name_bowtie_pileup.chr*)
- chr2b_files=($chrfiles_path/file.*)
- for ((i=0;i<${#chr1b_files[@]};i++)); do
- echo "perl $script_path/trimfile_t.pl "${chr1b_files[i]}" "${chr2b_files[i]}" " >> chopcommands3
- done
- cat ${WORKING_PATH}/chopcommands3 | parallel -j 8
+# samtools view -H c_bowtie2.fixed.bam | grep "\@SQ" | sed 's/^.*SN://g' | cut -f1 |  xargs -I {} -n 1 -P 24 sh -c "samtools mpileup -BQ0 -d10000000 -f $S_DB  -r \"{}\" c_bowtie2.fixed.bam | cut -f 1,2,4 > cnv_control_name_bowtie_pileup.\"{}\""
+# chr1b_files=($WORKING_PATH/cnv_control_name_bowtie_pileup.chr*)
+# chr2b_files=($chrfiles_path/file.*)
+# for ((i=0;i<${#chr1b_files[@]};i++)); do
+# echo "perl $script_path/trimfile_t.pl "${chr1b_files[i]}" "${chr2b_files[i]}" " >> chopcommands3
+# done
+# cat ${WORKING_PATH}/chopcommands3 | parallel -j 8
 
 
 
