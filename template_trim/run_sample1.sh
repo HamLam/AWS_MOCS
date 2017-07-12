@@ -51,7 +51,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
          echo "Run control_pileup.sh failed" >&2
          exit 1
      else
-         echo "sample 1 control_pileup.sh done"
+         echo "g1 control_pileup.sh done"
          echo "control_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -71,7 +71,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
  	echo "Run sample_pileup.sh failed" >&2
  	exit 1
      else
-        echo "sample 1 sample_pileup.sh done"
+        echo "g1 sample_pileup.sh done"
  	echo "sample_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -129,7 +129,7 @@ else
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
     else 
-     echo "sample 1 Pre_Load_Control.sql done"
+     echo "g1 Pre_Load_Control.sql done"
      echo "Pre_Load_Control.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -149,7 +149,7 @@ else
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
 else
-     echo "sample 1 Pre_Load_Sample.sql done"
+     echo "g1 Pre_Load_Sample.sql done"
      echo "Pre_Load_Sample.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -218,7 +218,7 @@ else
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
-      echo "sample 1 mysqlimport done"
+      echo "g1 mysqlimport done"
       echo "mysqlimport " >> $working_dir/completed.txt
     fi
  fi
@@ -238,7 +238,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 load_control.sql done"
+        echo "g1 load_control.sql done"
 	echo "load_control.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -259,7 +259,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-       echo "sample 1 load_sample.sql done"
+       echo "g1 load_sample.sql done"
 	echo "load_sample.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -279,7 +279,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-       echo "sample 1 create_reference.sql done"
+       echo "g1 create_reference.sql done"
 	echo "create_reference.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -299,7 +299,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 find_median.R done"
+        echo "g1 find_median.R done"
 	echo "find_median.R" >> $working_dir/completed.txt
     fi
 fi
@@ -318,7 +318,7 @@ else
 	# ## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_tables_part1.sql done"
+        echo "g1 create_tables_part1.sql done"
 	echo "create_tables_part1.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -337,7 +337,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 normalize_coverage.R done"
+        echo "g1 normalize_coverage.R done"
 	echo "normalize_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -356,7 +356,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 smooth_coverage.R done"
+        echo "g1 smooth_coverage.R done"
 	echo "smooth_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -375,7 +375,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 get_three_ref.R done"
+        echo "g1 get_three_ref.R done"
 	echo "get_three_ref.R" >> $working_dir/completed.txt
     fi
 fi
@@ -394,7 +394,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_tables_ref_v1.sql done"
+        echo "g1 create_tables_ref_v1.sql done"
 	echo "create_tables_ref_v1.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -413,7 +413,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_tables_ref.R done"
+        echo "g1 create_tables_ref.R done"
 	echo "create_tables_ref.R" >> $working_dir/completed.txt
     fi
 fi
@@ -432,7 +432,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo " sample 1 create_tables_ref_v2.sql done"
+        echo "g1 create_tables_ref_v2.sql done"
 	echo "create_tables_ref_v2.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -451,7 +451,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_coverage.sql done"
+        echo "g1 create_coverage.sql done"
 	echo "create_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -470,7 +470,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_sample_coverage.sql done"
+        echo "g1 create_sample_coverage.sql done"
 	echo "create_sample_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -489,7 +489,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 create_control_coverage.sql done"
+        echo "g1 create_control_coverage.sql done"
 	echo "create_control_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -508,7 +508,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 1 cnv_tables.sql done"
+        echo "g1 cnv_tables.sql done"
 	echo "cnv_tables.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -527,7 +527,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-       echo "sample 1 cnv_tables_amplifications.sql done"
+       echo "g1 cnv_tables_amplifications.sql done"
 	echo "cnv_tables_amplifications.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -546,6 +546,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g1 ordered_genes.sql done"
 	echo "ordered_genes.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -564,6 +565,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g1 create_data.sql done"
 	echo "create_data.sql" >> $working_dir/completed.txt
     fi
 fi
