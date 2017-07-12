@@ -218,7 +218,7 @@ else
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
-     echo "sample 1 mysqlimport done"
+      echo "sample 1 mysqlimport done"
       echo "mysqlimport " >> $working_dir/completed.txt
     fi
  fi
@@ -337,6 +337,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 normalize_coverage.R done"
 	echo "normalize_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -355,6 +356,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 smooth_coverage.R done"
 	echo "smooth_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -373,6 +375,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 get_three_ref.R done"
 	echo "get_three_ref.R" >> $working_dir/completed.txt
     fi
 fi
@@ -391,6 +394,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_tables_ref_v1.sql done"
 	echo "create_tables_ref_v1.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -409,6 +413,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_tables_ref.R done"
 	echo "create_tables_ref.R" >> $working_dir/completed.txt
     fi
 fi
