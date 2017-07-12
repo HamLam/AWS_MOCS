@@ -51,6 +51,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
          echo "Run control_pileup.sh failed" >&2
          exit 1
      else
+         echo "sample 1 control_pileup.sh done"
          echo "control_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -70,6 +71,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
  	echo "Run sample_pileup.sh failed" >&2
  	exit 1
      else
+        echo "sample 1 sample_pileup.sh done"
  	echo "sample_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -126,7 +128,8 @@ else
         echo "Run Pre_Load_Control.sql failed" >&2
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
-    else    
+    else 
+     echo "sample 1 Pre_Load_Control.sql done"
      echo "Pre_Load_Control.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -146,6 +149,7 @@ else
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
 else
+     echo "sample 1 Pre_Load_Sample.sql done"
      echo "Pre_Load_Sample.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -214,6 +218,7 @@ else
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
+     echo "sample 1 mysqlimport done"
       echo "mysqlimport " >> $working_dir/completed.txt
     fi
  fi
@@ -233,6 +238,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 load_control.sql done"
 	echo "load_control.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -253,6 +259,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+       echo "sample 1 load_sample.sql done"
 	echo "load_sample.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -272,6 +279,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+       echo "sample 1 create_reference.sql done"
 	echo "create_reference.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -291,6 +299,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 find_median.R done"
 	echo "find_median.R" >> $working_dir/completed.txt
     fi
 fi
@@ -309,6 +318,7 @@ else
 	# ## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_tables_part1.sql done"
 	echo "create_tables_part1.sql" >> $working_dir/completed.txt
     fi
 fi
