@@ -432,6 +432,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo " sample 1 create_tables_ref_v2.sql done"
 	echo "create_tables_ref_v2.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -450,6 +451,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_coverage.sql done"
 	echo "create_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -468,6 +470,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_sample_coverage.sql done"
 	echo "create_sample_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -486,6 +489,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 create_control_coverage.sql done"
 	echo "create_control_coverage.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -504,6 +508,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "sample 1 cnv_tables.sql done"
 	echo "cnv_tables.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -522,6 +527,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+       echo "sample 1 cnv_tables_amplifications.sql done"
 	echo "cnv_tables_amplifications.sql" >> $working_dir/completed.txt
     fi
 fi
