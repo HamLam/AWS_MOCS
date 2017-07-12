@@ -51,7 +51,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
          echo "Run control_pileup.sh failed" >&2
          exit 1
      else
-         echo "sample 3 control_pileup.sh done"
+         echo "g3 control_pileup.sh done"
          echo "control_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -71,7 +71,7 @@ grep "control_pileup.sh" $working_dir/completed.txt > /dev/null 2>&1
  	echo "Run sample_pileup.sh failed" >&2
  	exit 1
      else
-        echo "sample 3 sample_pileup.sh done"
+        echo "g3 sample_pileup.sh done"
  	echo "sample_pileup.sh" >> $working_dir/completed.txt
      fi
  fi
@@ -129,7 +129,7 @@ else
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
     else    
-    echo "sample 3 Pre_Load_Control.sql done"
+    echo "g3 Pre_Load_Control.sql done"
      echo "Pre_Load_Control.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -149,7 +149,7 @@ else
         ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
 else
-    echo "sample 3 Pre_Load_Sample.sql done"
+    echo "g3 Pre_Load_Sample.sql done"
      echo "Pre_Load_Sample.sql" >> $working_dir/completed.txt
  fi
 fi
@@ -237,7 +237,7 @@ else
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
-      echo "sample 3 mysqlimport done"
+      echo "g3 mysqlimport done"
       echo "mysqlimport " >> $working_dir/completed.txt
     fi
  fi
@@ -257,7 +257,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 3 load_control.sql done"
+        echo "g3 load_control.sql done"
 	echo "load_control.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -278,7 +278,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 3 load_sample.sql done"
+        echo "g3 load_sample.sql done"
 	echo "load_sample.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -298,7 +298,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 3 create_reference.sql done"
+        echo "g3 create_reference.sql done"
 	echo "create_reference.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -318,7 +318,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
-        echo "sample 3 find_median.R done"
+        echo "g3 find_median.R done"
 	echo "find_median.R" >> $working_dir/completed.txt
     fi
 fi
@@ -337,6 +337,7 @@ else
 	# ## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g3 create_tables_part1.sql done"
 	echo "create_tables_part1.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -355,6 +356,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g3 normalize_coverage.R done"
 	echo "normalize_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -373,6 +375,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g3 smooth_coverage.R done"
 	echo "smooth_coverage.R" >> $working_dir/completed.txt
     fi
 fi
@@ -391,6 +394,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+        echo "g3 get_three_ref.R done"
 	echo "get_three_ref.R" >> $working_dir/completed.txt
     fi
 fi
