@@ -584,6 +584,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+     echo "g1 get_machine_learning_data.sql done"
 	echo "get_machine_learning_data.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -602,6 +603,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+     echo "g1 aggregate_window.R done"
 	echo "aggregate_window.R" >> $working_dir/completed.txt
     fi
 fi
@@ -620,6 +622,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+     echo "g1 combine_data.sql done"
 	echo "combine_data.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -638,6 +641,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+    echo "g1 cnv_randomForest_predict.R"
 	echo "cnv_randomForest_predict.R" >> $working_dir/completed.txt
     fi
 fi
@@ -656,6 +660,7 @@ else
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
 	exit 1
     else
+     echo "g1 get_predicted.sql"
 	echo "get_predicted.sql" >> $working_dir/completed.txt
     fi
 fi
@@ -680,7 +685,7 @@ then
     mv  sample_name_raw_data_amp_$_now.txt archive_path/raw_data
     chmod 664 archive_path/raw_data/sample_name_raw_data_amp_$_now.txt
 else
-    echo "sample_name_raw_data_amp_$_now.txt is empty."
+    echo "g1 sample_name_raw_data_amp_$_now.txt is empty."
     # do something as file is empty 
 fi
 
@@ -693,7 +698,7 @@ then
     mv  sample_name_predicted_$_now.txt  archive_path/predicted_data
     chmod 664 archive_path/predicted_data/sample_name_predicted_$_now.txt
 else
-    echo "sample_name_predicted_$_now.txt is empty"
+    echo "g1 sample_name_predicted_$_now.txt is empty"
 fi
 
 if [ -s sample_name_predicted_amp_$_now.txt ]
@@ -701,7 +706,7 @@ then
     mv  sample_name_predicted_amp_$_now.txt  archive_path/predicted_data
     chmod 664 archive_path/predicted_data/sample_name_predicted_amp_$_now.txt
 else
-    echo "sample_name_predicted_amp_$_now.txt is empty"
+    echo "g1 sample_name_predicted_amp_$_now.txt is empty"
 fi
 
 #grep "plot_script.pl" $working_dir/completed.txt > /dev/null 2>&1
@@ -816,6 +821,7 @@ else
 	echo "Run cnv2vcf.py failed" >&2
 	exit 1
     else
+      echo "g1 cnv2vcf.py done"
 	echo "cnv2vcf.py" >> $working_dir/completed.txt
     fi 
 fi
@@ -840,6 +846,7 @@ else
         echo "Run get_qc_data.sql failed" >&2
         exit 1
     else
+     echo "g1 get_qc_data.sql done"
         echo "get_qc_data.sql" >> $working_dir/completed.txt
     fi
 fi
