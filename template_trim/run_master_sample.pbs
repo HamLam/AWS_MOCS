@@ -38,21 +38,6 @@ working_dir_g1=${working_dir}/${g1}g1
 
 cd $working_dir
 
-# Load modules
-# module load parallel
-# module load bwa/0.7.12_gcc-4.9.2_haswell/bwa
-# module load bowtie2/2.2.4_gcc-4.9.2_haswell
-# module load picard/1.140
-# module load picard
-# module load samtools/1.2_gcc-4.9.2_haswell
-# module load R/3.1.1
-# module load bedtools/2.25.0/bin/bedtools
-# module load python/2.7.5
-# PYTHONPATH=/soft/python/2.7.1/lib/python2.7/site-packages
-# export PYTHONPATH=/soft/python/2.7.5/lib/python2.7/site-packages:$PYTHONPATH
-# LD_LIBRARY_PATH=/soft/python/2.7.1/lib
-# export LD_LIBRARY_PATH=/soft/python/2.7.5/lib:$LD_LIBRARY_PATH
-
 _now=$(date +"%Y-%m-%d_%H-%M")
 
 
@@ -91,50 +76,6 @@ timecheck=`(date +"Date: %Y-%m-%d Time %H:%M:%S")`;
    
    
   echo "Mapping done and bam and bai linked and copied to 7 groups" >> $working_dir/completed.txt
-
-
-# grep "installed_mysql" $working_dir/completed.txt > /dev/null 2>&1
-# if [ "$?" = "0" ]; then
-#    echo "MySQL already installed"
-# else
-# Untar MySQL source
-#    mkdir src
-#    cd src
-#    tar xzvf $code_src/mysql-5.6.24-linux-glibc2.5-x86_64.tar.gz
-# Setup the mysql data directory install
-#    mkdir $working_dir/mysql
-#    cd $working_dir/src/mysql-5.6.24-linux-glibc2.5-x86_64/support-files
-#    cp $code_src/my.cnf my-default.cnf
-#    cd ..
-#    rm -rf *.cnf
-#    ./scripts/mysql_install_db -datadir=$working_dir/mysql/data
-#    if [[ $? -ne 0 ]] ; then
-#        echo "MySQL installation failed" >&2
-#        exit 1
-#    else
-#        cd $working_dir
-#        echo "installed_mysql" >> $working_dir/completed.txt
-#    fi
-# fi
-
-# echo -n "Finished Mysql install " >> $working_dir/time_check
-# timecheck=`(date +"%Y-%m-%d [ %H:%M:%S ]")`;
-# echo ${timecheck} >> $working_dir/time_check
-
-
-# Alter PATH variable to know of mysql executables
-# export PATH=$working_dir/bin:$working_dir/src/mysql-5.6.24-linux-glibc2.5-x86_64/bin:$PATH
-# BASE=$working_dir/mysql
-# mysql_socket=$BASE/thesock
-
-
-# mysqld --innodb-buffer-pool-size=40G --key-buffer-size=15G --innodb-log-file-size=5G \
-# --innodb_flush_log_at_trx_commit=2 --basedir=$BASE --datadir=$BASE/data --log-error=$BASE/data/mysql.err \
-# --pid-file=$BASE/mysql.pid --socket=$BASE/thesock --port=3306 --connect-timeout=30 \
-# --lc-messages-dir=$working_dir/src/mysql-5.6.24-linux-glibc2.5-x86_64/share/english --tmpdir=/scratch &
-
-
- # sleep $MYSQL_LOAD_WAIT
 
 
 ### Run the 7 groups via parallel here
