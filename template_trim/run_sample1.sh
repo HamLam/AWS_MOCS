@@ -215,7 +215,7 @@ else
      cnv_sample_name_bowtie_pileup.chr17_t 
   if [[ $? -ne 0 ]]; then
    echo "Run mysqlimport failed" >&2
-   echo "Run msyqlimport failed" 
+   echo "g1 Run msyqlimport failed" 
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
