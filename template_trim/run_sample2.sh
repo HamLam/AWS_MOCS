@@ -164,7 +164,7 @@ grep "mysqlimport" $working_dir/completed.txt > /dev/null 2>&1
 else
  echo "Run mysqlimport"
 
-     mysqlimport --local --socket=$BASE/thesock -u root cnv2 --use-threads=8 \
+     mysqlimport --local --socket=$BASE/thesock -u root cnv2 --use-threads=5 \
      cnv_control_name_bwa_pileup_no_dup.chr3_t \
      cnv_control_name_bwa_pileup_no_dup.chr4_t \
      cnv_control_name_bwa_pileup_no_dup.chr5_t \
@@ -234,6 +234,7 @@ else
 
   if [[ $? -ne 0 ]]; then
    echo "Run mysqlimport failed" >&2
+   echo "g2 Run mysqlimport failed"
        ## mysqladmin --socket=$BASE/thesock shutdown -u root
         exit 1
      else
