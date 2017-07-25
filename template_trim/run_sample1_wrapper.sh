@@ -27,7 +27,7 @@ ATTEMPTS=1
       sh ${working_dir_g1}/run_cnv_${g1}.sh 
    ec=$?
     if [[ $ec != 0 ]]; then
-        sleep 120
+        sleep 30
     else
         break
     fi
