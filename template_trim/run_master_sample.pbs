@@ -91,7 +91,7 @@ echo "sh ${working_dir_g2}/run_cnv_wrapper_${g2}g2.sh" >> ${working_dir}/RunGrou
 echo "sh ${working_dir_g1}/run_cnv_wrapper_${g1}g1.sh" >> ${working_dir}/RunGroupCommands
 
 #parallel -j +0 --joblog ${working_dir}/group_jobs_log < ${working_dir}/RunGroupCommands
-parallel -j 3 < ${working_dir}/RunGroupCommands
+parallel -j 2 < ${working_dir}/RunGroupCommands
  wait # would this hangs?  
 
 
