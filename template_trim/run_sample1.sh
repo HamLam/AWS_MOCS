@@ -239,7 +239,7 @@ else
     if [[ $? -ne 0 ]] ; then
 	echo "Run load_control.sql failed" >&2
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
-	exit 1
+	# exit 1
     else
         echo "g1 load_control.sql done"
 	echo "load_control.sql" >> $working_dir/completed.txt
@@ -260,7 +260,7 @@ else
     if [[ $? -ne 0 ]] ; then
 	echo "Run load_sample.sql failed" >&2
 	## mysqladmin --socket=$BASE/thesock shutdown -u root
-	exit 1
+	# exit 1
     else
        echo "g1 load_sample.sql done"
 	echo "load_sample.sql" >> $working_dir/completed.txt
