@@ -1,4 +1,5 @@
 #!/bin/bash                             
+ulimit -u 
 
 echo "Run Group 1 called"
 
