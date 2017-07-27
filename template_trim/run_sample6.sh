@@ -159,74 +159,75 @@ grep "mysqlimport" $working_dir/completed.txt > /dev/null 2>&1
    echo "mysqlimport already run"
 else
  echo "Run mysqlimport"
-mysqlimport --local --socket=$BASE/thesock -u root cnv6 --use-threads=4 cnv_control_name_bwa_pileup_no_dup.chr*_t cnv_control_name_bwa_pileup.chr*_t cnv_control_name_bowtie_pileup.chr*_t cnv_sample_name_bwa_pileup_no_dup.chr*_t cnv_sample_name_bwa_pileup.chr*_t cnv_sample_name_bowtie_pileup.chr*_t
-    # mysqlimport --local --socket=$BASE/thesock -u root cnv6 --use-threads=5 --debug-check \
-    # cnv_control_name_bwa_pileup_no_dup.chr17_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr18_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr19_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr20_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr1_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr2_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr6_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr9_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr10_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr13_t \
-    # cnv_control_name_bwa_pileup_no_dup.chr15_t \
-    # cnv_control_name_bwa_pileup.chr17_t \
-    # cnv_control_name_bwa_pileup.chr18_t \
-    # cnv_control_name_bwa_pileup.chr19_t \
-    # cnv_control_name_bwa_pileup.chr20_t \
-    # cnv_control_name_bwa_pileup.chr1_t \
-    # cnv_control_name_bwa_pileup.chr2_t \
-    # cnv_control_name_bwa_pileup.chr6_t \
-    # cnv_control_name_bwa_pileup.chr9_t \
-    # cnv_control_name_bwa_pileup.chr10_t \
-    # cnv_control_name_bwa_pileup.chr13_t \
-    # cnv_control_name_bwa_pileup.chr15_t \
-    # cnv_control_name_bowtie_pileup.chr17_t \
-    # cnv_control_name_bowtie_pileup.chr18_t \
-    # cnv_control_name_bowtie_pileup.chr19_t \
-    # cnv_control_name_bowtie_pileup.chr20_t \
-    # cnv_control_name_bowtie_pileup.chr1_t \
-    # cnv_control_name_bowtie_pileup.chr2_t \
-    # cnv_control_name_bowtie_pileup.chr6_t \
-    # cnv_control_name_bowtie_pileup.chr9_t \
-    # cnv_control_name_bowtie_pileup.chr10_t \
-    # cnv_control_name_bowtie_pileup.chr13_t \
-    # cnv_control_name_bowtie_pileup.chr15_t \
-#     cnv_sample_name_bwa_pileup_no_dup.chr17_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr18_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr19_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr20_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr1_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr2_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr6_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr9_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr10_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr13_t \
-    # cnv_sample_name_bwa_pileup_no_dup.chr15_t \
-    # cnv_sample_name_bwa_pileup.chr17_t \
-    # cnv_sample_name_bwa_pileup.chr18_t \
-    # cnv_sample_name_bwa_pileup.chr19_t \
-    # cnv_sample_name_bwa_pileup.chr20_t \
-    # cnv_sample_name_bwa_pileup.chr1_t \
-    # cnv_sample_name_bwa_pileup.chr2_t \
-    # cnv_sample_name_bwa_pileup.chr6_t \
-    # cnv_sample_name_bwa_pileup.chr9_t \
-    # cnv_sample_name_bwa_pileup.chr10_t \
-    # cnv_sample_name_bwa_pileup.chr13_t \
-    # cnv_sample_name_bwa_pileup.chr15_t \
-    # cnv_sample_name_bowtie_pileup.chr17_t \
-    # cnv_sample_name_bowtie_pileup.chr18_t \
-    # cnv_sample_name_bowtie_pileup.chr19_t \
-#     cnv_sample_name_bowtie_pileup.chr20_t \
-    # cnv_sample_name_bowtie_pileup.chr1_t \
-    # cnv_sample_name_bowtie_pileup.chr2_t \
-    # cnv_sample_name_bowtie_pileup.chr6_t \
-    # cnv_sample_name_bowtie_pileup.chr9_t \
-#     cnv_sample_name_bowtie_pileup.chr10_t \
- #    cnv_sample_name_bowtie_pileup.chr13_t \
-  #   cnv_sample_name_bowtie_pileup.chr15_t 
+# mysqlimport --local --socket=$BASE/thesock -u root cnv6 --use-threads=4 cnv_control_name_bwa_pileup_no_dup.chr*_t cnv_control_name_bwa_pileup.chr*_t cnv_control_name_bowtie_pileup.chr*_t cnv_sample_name_bwa_pileup_no_dup.chr*_t cnv_sample_name_bwa_pileup.chr*_t cnv_sample_name_bowtie_pileup.chr*_t
+    
+    mysqlimport --local --socket=$BASE/thesock -u root cnv6 --use-threads=5 --debug-check \
+     cnv_control_name_bwa_pileup_no_dup.chr17_t \
+     cnv_control_name_bwa_pileup_no_dup.chr18_t \
+     cnv_control_name_bwa_pileup_no_dup.chr19_t \
+     cnv_control_name_bwa_pileup_no_dup.chr20_t \
+     cnv_control_name_bwa_pileup_no_dup.chr1_t \
+     cnv_control_name_bwa_pileup_no_dup.chr2_t \
+     cnv_control_name_bwa_pileup_no_dup.chr6_t \
+     cnv_control_name_bwa_pileup_no_dup.chr9_t \
+     cnv_control_name_bwa_pileup_no_dup.chr10_t \
+     cnv_control_name_bwa_pileup_no_dup.chr13_t \
+     cnv_control_name_bwa_pileup_no_dup.chr15_t \
+     cnv_control_name_bwa_pileup.chr17_t \
+     cnv_control_name_bwa_pileup.chr18_t \
+     cnv_control_name_bwa_pileup.chr19_t \
+     cnv_control_name_bwa_pileup.chr20_t \
+     cnv_control_name_bwa_pileup.chr1_t \
+     cnv_control_name_bwa_pileup.chr2_t \
+     cnv_control_name_bwa_pileup.chr6_t \
+     cnv_control_name_bwa_pileup.chr9_t \
+     cnv_control_name_bwa_pileup.chr10_t \
+     cnv_control_name_bwa_pileup.chr13_t \
+     cnv_control_name_bwa_pileup.chr15_t \
+     cnv_control_name_bowtie_pileup.chr17_t \
+     cnv_control_name_bowtie_pileup.chr18_t \
+     cnv_control_name_bowtie_pileup.chr19_t \
+     cnv_control_name_bowtie_pileup.chr20_t \
+     cnv_control_name_bowtie_pileup.chr1_t \
+     cnv_control_name_bowtie_pileup.chr2_t \
+     cnv_control_name_bowtie_pileup.chr6_t \
+     cnv_control_name_bowtie_pileup.chr9_t \
+     cnv_control_name_bowtie_pileup.chr10_t \
+     cnv_control_name_bowtie_pileup.chr13_t \
+     cnv_control_name_bowtie_pileup.chr15_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr17_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr18_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr19_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr20_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr1_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr2_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr6_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr9_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr10_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr13_t \
+     cnv_sample_name_bwa_pileup_no_dup.chr15_t \
+     cnv_sample_name_bwa_pileup.chr17_t \
+     cnv_sample_name_bwa_pileup.chr18_t \
+     cnv_sample_name_bwa_pileup.chr19_t \
+     cnv_sample_name_bwa_pileup.chr20_t \
+     cnv_sample_name_bwa_pileup.chr1_t \
+     cnv_sample_name_bwa_pileup.chr2_t \
+     cnv_sample_name_bwa_pileup.chr6_t \
+     cnv_sample_name_bwa_pileup.chr9_t \
+    cnv_sample_name_bwa_pileup.chr10_t \
+     cnv_sample_name_bwa_pileup.chr13_t \
+     cnv_sample_name_bwa_pileup.chr15_t \
+     cnv_sample_name_bowtie_pileup.chr17_t \
+     cnv_sample_name_bowtie_pileup.chr18_t \
+     cnv_sample_name_bowtie_pileup.chr19_t \
+     cnv_sample_name_bowtie_pileup.chr20_t \
+     cnv_sample_name_bowtie_pileup.chr1_t \
+     cnv_sample_name_bowtie_pileup.chr2_t \
+     cnv_sample_name_bowtie_pileup.chr6_t \
+     cnv_sample_name_bowtie_pileup.chr9_t \
+     cnv_sample_name_bowtie_pileup.chr10_t \
+     cnv_sample_name_bowtie_pileup.chr13_t \
+    cnv_sample_name_bowtie_pileup.chr15_t 
 
   if [[ $? -ne 0 ]]; then
    echo "Run mysqlimport failed" >&2
