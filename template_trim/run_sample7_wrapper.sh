@@ -1,5 +1,5 @@
 #!/bin/bash                             
-
+ulimit -u
 echo "g7 wrapper called"
 
 working_dir=sample_path
