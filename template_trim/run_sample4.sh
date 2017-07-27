@@ -1,5 +1,5 @@
 #!/bin/bash                             
-
+ulimit -u
 echo "Run Group 4 called"
 
 working_dir=sample_path
