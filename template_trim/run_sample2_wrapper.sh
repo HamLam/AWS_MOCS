@@ -1,4 +1,5 @@
 #!/bin/bash                             
+ulimit -u
 
 echo "g2 wrapper called"
 
