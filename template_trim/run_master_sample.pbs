@@ -8,6 +8,7 @@
 #PBS -A thyagara
 
 #  newgrp - thyagara
+ulimit -u
 
 working_dir=sample_path
 working_dirS=sample_path/sample_name
