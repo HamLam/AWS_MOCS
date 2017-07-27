@@ -1,4 +1,5 @@
 #!/bin/bash                             
+ulimit -u
 
 echo "g3 wrapper called"
 
