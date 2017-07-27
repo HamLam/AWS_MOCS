@@ -1,5 +1,7 @@
 #!/bin/bash                             
 
+ulimit -u
+
 echo "Run Group 7 called"
 
 working_dir=sample_path
