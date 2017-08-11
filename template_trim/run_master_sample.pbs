@@ -83,8 +83,8 @@ echo "sh ${working_dir_g3}/run_cnv_wrapper_${g3}g3.sh" >> ${working_dir}/RunGrou
 echo "sh ${working_dir_g2}/run_cnv_wrapper_${g2}g2.sh" >> ${working_dir}/RunGroupCommands
 echo "sh ${working_dir_g1}/run_cnv_wrapper_${g1}g1.sh" >> ${working_dir}/RunGroupCommands
 # sh ${working_dir}/RunGroupCommands
-# parallel -j 7 --joblog ${working_dir}/group_jobs_log < ${working_dir}/RunGroupCommands
- parallel -j +0 < ${working_dir}/RunGroupCommands
+ parallel -j 7 --joblog ${working_dir}/group_jobs_log < ${working_dir}/RunGroupCommands
+ # parallel -j +0 < ${working_dir}/RunGroupCommands
  # wait # would this hangs?  
 
 #echo "Not running any process ..."
