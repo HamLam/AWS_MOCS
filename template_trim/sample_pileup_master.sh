@@ -34,7 +34,7 @@ mkdir /mnt/tmp/tso_launcher_v3.0.0/javatmp
   else
    echo "mkdir javatmp done"
    fi
-   fi
+
 
 
 java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
