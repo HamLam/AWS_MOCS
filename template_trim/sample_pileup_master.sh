@@ -32,7 +32,7 @@ JAVATMP=/mnt/tmp/tso_launcher_v3.0.0/javatmp
 mkdir ${JAVATMP}
 
 
-java -Xmx4g -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
+java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
 
 picard1="java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=s_bwa_duplicate_stats.txt INPUT=s_bwa.fixed.bam OUTPUT=s_bwa.fixed_nodup.bam"
 picard2="java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bowtie2_s1.bam OUTPUT=s_bowtie2.fixed.bam"
