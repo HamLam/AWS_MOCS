@@ -27,7 +27,7 @@ echo ${bwacommand} > $WORKING_PATH/aligncommands
 echo ${btcommand} >> $WORKING_PATH/aligncommands
 cat ${WORKING_PATH}/aligncommands | parallel -j +0
 
-JAVATMP=/mnt/tmp/tso_launcher_v3.0.0/javatmp
+JAVATMP=/mnt/tmp/tso_launcher_v3.0.0/javatmp2
 mkdir ${JAVATMP}
 
 java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=c_bwa.bam OUTPUT=c_bwa.fixed.bam
