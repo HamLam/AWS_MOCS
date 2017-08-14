@@ -28,14 +28,19 @@ echo ${bwacommand} > $WORKING_PATH/saligncommands
 echo ${btcommand} >> $WORKING_PATH/saligncommands
 cat ${WORKING_PATH}/saligncommands | parallel -j +0 $1
 
-JAVATMP=/mnt/tmp/tso_launcher_v3.0.0/javatmp
-mkdir ${JAVATMP}
+mkdir /mnt/tmp/tso_launcher_v3.0.0/javatmp
+ if [ "$?" -ne 0 ]; then
+  echo "mkdir javatmp failed"
+  else
+   echo "mkdir javatmp done"
+   fi
+   fi
 
 
-java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
+java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
 
-picard1="java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=s_bwa_duplicate_stats.txt INPUT=s_bwa.fixed.bam OUTPUT=s_bwa.fixed_nodup.bam"
-picard2="java -Xmx4g -Djava.io.tmpdir=${JAVATMP} -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bowtie2_s1.bam OUTPUT=s_bowtie2.fixed.bam"
+picard1="java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=s_bwa_duplicate_stats.txt INPUT=s_bwa.fixed.bam OUTPUT=s_bwa.fixed_nodup.bam"
+picard2="java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bowtie2_s1.bam OUTPUT=s_bowtie2.fixed.bam"
 
 echo ${picard1} > $WORKING_PATH/spicardcommands
 echo ${picard2} >> $WORKING_PATH/spicardcommands
