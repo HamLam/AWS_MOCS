@@ -29,11 +29,8 @@ echo ${btcommand} >> $WORKING_PATH/saligncommands
 cat ${WORKING_PATH}/saligncommands | parallel -j +0 $1
 
 mkdir /mnt/tmp/tso_launcher_v3.0.0/javatmp
- if [ "$?" -ne 0 ]; then
-  echo "mkdir javatmp failed"
-  else
-   echo "mkdir javatmp done"
-   fi
+  echo "mkdir javatmp done"
+  
 
 
 set _JAVA_OPTIONS=-Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp
