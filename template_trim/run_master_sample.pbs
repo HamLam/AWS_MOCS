@@ -46,6 +46,7 @@ echo ${_now} >> $working_dir/time_check
 timecheck=`(date +"Date: %Y-%m-%d Time %H:%M:%S")`;
 # echo ${timecheck} >> $working_dir/time_check
 
+mkdir ${working_dir}/javatmp
 
 export PARALLEL="--env _JAVA_OPTIONS=-Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp"
 
