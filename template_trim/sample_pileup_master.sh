@@ -36,7 +36,7 @@ mkdir /mnt/tmp/tso_launcher_v3.0.0/javatmp
    fi
 
 
-
+set _JAVA_OPTIONS=-Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp
 java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=s_bwa_s1.bam OUTPUT=s_bwa.fixed.bam
 
 picard1="java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp -jar  $CLASSPATH/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true METRICS_FILE=s_bwa_duplicate_stats.txt INPUT=s_bwa.fixed.bam OUTPUT=s_bwa.fixed_nodup.bam"
