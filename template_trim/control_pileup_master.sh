@@ -28,11 +28,7 @@ echo ${btcommand} >> $WORKING_PATH/aligncommands
 cat ${WORKING_PATH}/aligncommands | parallel -j +0
 
 mkdir /mnt/tmp/tso_launcher_v3.0.0/javatmp2
- if [ "$?" -ne 0 ]; then
-  echo "mkdir javatmp2 failed"
-  else
    echo "mkdir javatmp2 done"
-   fi
    
 set _JAVA_OPTIONS=-Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp2
 java -Xmx4g -Djava.io.tmpdir=/mnt/tmp/tso_launcher_v3.0.0/javatmp2 -jar  $CLASSPATH/picard.jar FixMateInformation SORT_ORDER=coordinate INPUT=c_bwa.bam OUTPUT=c_bwa.fixed.bam
