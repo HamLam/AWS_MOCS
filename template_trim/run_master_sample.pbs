@@ -89,9 +89,6 @@ echo "sh ${working_dir_g1}/run_cnv_wrapper_${g1}g1.sh" >> ${working_dir}/RunGrou
 # sh ${working_dir}/RunGroupCommands
  parallel -j 7 --joblog ${working_dir}/group_jobs_log < ${working_dir}/RunGroupCommands
  # parallel -j +0 < ${working_dir}/RunGroupCommands
- # wait # would this hangs?  
+ # wait ?  
 
-#echo "Not running any process ..."
-#echo "sleeping ....."
-#sleep 300
-#echo "awake"
+
